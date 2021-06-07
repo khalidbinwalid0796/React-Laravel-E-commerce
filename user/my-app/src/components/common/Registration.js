@@ -8,13 +8,20 @@ import { Redirect } from 'react-router-dom';
 
 class UserOnboard extends Component {
 
-    state={
-        name:'',
-        email:'',
-        mobile:'',
-        password:'',
-        password_confirmation:''
+    constructor() {
+        super();
+        this.state={
+            name:'',
+            email:'',
+            mobile:'',
+            password:'',
+            password_confirmation:'',
+            UserRedirect:false
+        }
+        this.onUserRedirect=this.onUserRedirect.bind(this);
     }
+
+
 
     formSubmit =(e)=>{
         e.preventDefault();
@@ -30,14 +37,13 @@ class UserOnboard extends Component {
           .then((response)=> {
             LocalStorageHelper.setToken('token',response.data.token);       //token store on local storage
                 this.setState({
-                    loggedIn:true
+                    UserRedirect:true
                 })
 
                 toast.success("Registration Success",{
                     position:"bottom-center"
                 });
 
-                this.props.setUser(response.data.user);
           })
           .catch( (error) => {
             console.log(error);
@@ -45,12 +51,13 @@ class UserOnboard extends Component {
 
      }
 
-    render() {
-
-        //after login redirect profile
-        if(this.state.loggedIn){
-            return <Redirect  to={'/'} />
+     onUserRedirect(){
+        if(this.state.UserRedirect===true){
+            return(<Redirect to="/"/>)
         }
+    }
+
+    render() {
 
         return (
             <Fragment>
@@ -78,6 +85,7 @@ class UserOnboard extends Component {
                         </Col>
                     </Row>
                 </Container>
+                {this.onUserRedirect()}
             </Fragment>
         );
     }

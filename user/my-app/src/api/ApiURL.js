@@ -29,7 +29,6 @@ class ApiURL{
 
     static  login=this.BaseURL+"login";
     static  register=this.BaseURL+"register";
-    static  user=this.BaseURL+"user";
 
     //static  addToCart=this.BaseURL+"addToCart";
     static  addToCart(product_code){

@@ -1,8 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import NavMenuDesktop from "../components/common/NavMenuDesktop";
-import NavMenuMobile from "../components/common/NavMenuMobile";
 import FooterDesktop from "../components/common/FooterDesktop";
-import FooterMobile from "../components/common/FooterMobile";
 import Policy from "../components/Others/Policy";
 
 class PolicyPage extends Component {
@@ -16,17 +14,11 @@ class PolicyPage extends Component {
                 <div className="Desktop">
                     <NavMenuDesktop/>
                 </div>
-                <div className="Mobile">
-                    <NavMenuMobile/>
-                </div>
 
                 <Policy/>
 
                 <div className="Desktop">
                     <FooterDesktop/>
-                </div>
-                <div className="Mobile">
-                    <FooterMobile/>
                 </div>
 
             </Fragment>

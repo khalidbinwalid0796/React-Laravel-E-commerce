@@ -1,8 +1,6 @@
 import React, {Component,Fragment} from 'react';
 import NavMenuDesktop from "../components/common/NavMenuDesktop";
-import NavMenuMobile from "../components/common/NavMenuMobile";
 import FooterDesktop from "../components/common/FooterDesktop";
-import FooterMobile from "../components/common/FooterMobile";
 import CartList from "../components/Cart/CartList";
 import {Redirect} from "react-router";
 import LocalStorageHelper from "../LocalStorageHelper/LocalStorageHelper";
@@ -28,9 +26,9 @@ class CartPage extends Component {
         window.scroll(0,0)
         let token= LocalStorageHelper.getToken('Token');
         if(token===null){
-            this.setState({RedirectStatus:false})
-        }else{
             this.setState({RedirectStatus:true})
+        }else{
+            this.setState({RedirectStatus:false})
         }
     }
 
@@ -40,18 +38,13 @@ class CartPage extends Component {
                 <div className="Desktop">
                     <NavMenuDesktop/>
                 </div>
-                <div className="Mobile">
-                    <NavMenuMobile/>
-                </div>
 
                 <CartList/>
 
                 <div className="Desktop">
                     <FooterDesktop/>
                 </div>
-                <div className="Mobile">
-                    <FooterMobile/>
-                </div>
+
                 {this.pageRedirect()}
             </Fragment>
         );

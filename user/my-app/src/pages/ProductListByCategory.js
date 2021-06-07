@@ -1,8 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import NavMenuDesktop from "../components/common/NavMenuDesktop";
-import NavMenuMobile from "../components/common/NavMenuMobile";
 import FooterDesktop from "../components/common/FooterDesktop";
-import FooterMobile from "../components/common/FooterMobile";
 import ListByCategory from "../components/ProductDetails/ListByCategory";
 import axios from "axios";
 import ApiURL from "../api/ApiURL";
@@ -39,9 +37,6 @@ class ProductListByCategory extends Component {
                 <div className="Desktop">
                     <NavMenuDesktop/>
                 </div>
-                <div className="Mobile">
-                    <NavMenuMobile/>
-                </div>
 
                 <ProductListLoader isLoading={this.state.isLoading}/>
                 <div className={this.state.MainDiv}>
@@ -51,10 +46,7 @@ class ProductListByCategory extends Component {
                 <div className="Desktop">
                     <FooterDesktop/>
                 </div>
-                <div className="Mobile">
-                    <FooterMobile/>
-                </div>
-
+    
             </Fragment>
         );
     }

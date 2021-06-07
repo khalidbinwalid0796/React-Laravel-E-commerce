@@ -5,7 +5,6 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 import axios from 'axios';
 import ApiURL from "../../api/ApiURL";
 import {toast, ToastContainer} from "react-toastify";
-import LocalStorageHelper from "../../LocalStorageHelper/LocalStorageHelper";
 
 class FooterDesktop extends Component {
 

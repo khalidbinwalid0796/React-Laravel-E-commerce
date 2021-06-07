@@ -1,7 +1,6 @@
 import React, {Component,Fragment} from 'react';
 import {Container, Row, Col} from "react-bootstrap";
 import ReactHtmlParser from "react-html-parser";
-import  ReactDom from 'react-dom';
 import InnerImageZoom from 'react-inner-image-zoom';
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -101,7 +100,7 @@ class ProductDetails extends Component {
     }
     else {
         let winlocation=window.location.pathname;
-        //alert(winlocation)
+        //alert(winlocation)-->/productDetails/p2
         LocalStorageHelper.SetRedirectFromDetails(winlocation);
         this.setState({RedirectToLogin:true})
     }

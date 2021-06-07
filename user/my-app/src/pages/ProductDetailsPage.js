@@ -1,9 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import NavMenuDesktop from "../components/common/NavMenuDesktop";
-import NavMenuMobile from "../components/common/NavMenuMobile";
 import FooterDesktop from "../components/common/FooterDesktop";
-import FooterMobile from "../components/common/FooterMobile";
-import SuggestedProducts from "../components/ProductDetails/SuggestedProducts";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
 import axios from "axios";
 import ApiURL from "../api/ApiURL";
@@ -41,17 +38,8 @@ class ProductDetailsPage extends Component {
                         <div className="Desktop">
                             <NavMenuDesktop/>
                         </div>
-                        <div className="Mobile">
-                            <NavMenuMobile/>
-                        </div>
                     
                         <ProductDetailsPlaceholder isLoading={this.state.isLoading}/>
-                        <div className="Desktop">
-                            <FooterDesktop/>
-                        </div>
-                        <div className="Mobile">
-                            <FooterMobile/>
-                        </div>
 
                     </Fragment>
 
@@ -63,17 +51,11 @@ class ProductDetailsPage extends Component {
                         <div className="Desktop">
                             <NavMenuDesktop/>
                         </div>
-                        <div className="Mobile">
-                            <NavMenuMobile/>
-                        </div>
 
                         <ProductDetails ProductData={this.state.ProductData}/>
 
                         <div className="Desktop">
                             <FooterDesktop/>
-                        </div>
-                        <div className="Mobile">
-                            <FooterMobile/>
                         </div>
 
                     </Fragment>

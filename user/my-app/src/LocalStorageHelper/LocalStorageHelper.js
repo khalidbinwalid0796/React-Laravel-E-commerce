@@ -8,9 +8,6 @@ class LocalStorageHelper {
     static getToken(){
         return  reactLocalStorage.get("Token")
     }
-    static storageClear(){
-        reactLocalStorage.clear();
-    }
 
     // Set Get User Email
     static setEmail(Email){
@@ -18,6 +15,18 @@ class LocalStorageHelper {
     }
     static getEmail(){
         return  reactLocalStorage.get("Email")
+    }
+
+    // Set Get User Name
+    static setName(Name){
+        reactLocalStorage.set("Name",Name)
+    }
+    static getName(){
+        return  reactLocalStorage.get("Name")
+    }
+
+    static storageClear(){
+        reactLocalStorage.clear();
     }
 
     static SetRedirectFromDetails(winlocation){

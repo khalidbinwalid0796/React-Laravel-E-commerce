@@ -30,13 +30,14 @@ class UserOnboard extends Component {
         axios.post(ApiURL.login, data)
           .then((response)=> {
               let token = response.data.token;
+              let uname = response.data.user.name;
                 LocalStorageHelper.setToken(token);       //token store on local storage
                 LocalStorageHelper.setEmail(this.state.email);
+                LocalStorageHelper.setName(uname);
                 this.setState({
-                    loggedIn:true,
                     UserRedirect:true
                 })
-                this.props.setUser(response.data.user);
+
           })
           .catch( (error) => {
               this.setState({message:error.response.data.message})
